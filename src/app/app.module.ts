@@ -1,3 +1,4 @@
+import { ToastService } from './../services/toast/toast.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -8,6 +9,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { MyApp } from './app.component';
 import { FIREBASE_CONFIG } from './firebase.credentials';
+import { ShoppingListService } from '../services/shopping-list/shopping-list.service';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
   providers: [
     StatusBar,
     SplashScreen,
+    ShoppingListService,
+    ToastService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
